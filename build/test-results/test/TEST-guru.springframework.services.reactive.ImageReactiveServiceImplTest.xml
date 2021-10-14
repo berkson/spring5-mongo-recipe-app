@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="guru.springframework.services.reactive.ImageReactiveServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:48" hostname="aspire5" time="0.166">
+  <properties/>
+  <testcase name="saveImageFile()" classname="guru.springframework.services.reactive.ImageReactiveServiceImplTest" time="0.166"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

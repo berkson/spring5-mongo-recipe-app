@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="guru.springframework.services.RecipeServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:49" hostname="aspire5" time="0.021">
+  <properties/>
+  <testcase name="getRecipeByIdTestNotFound()" classname="guru.springframework.services.RecipeServiceImplTest" time="0.003"/>
+  <testcase name="testDeleteById()" classname="guru.springframework.services.RecipeServiceImplTest" time="0.002"/>
+  <testcase name="getRecipesTest()" classname="guru.springframework.services.RecipeServiceImplTest" time="0.004"/>
+  <testcase name="getRecipeByIdTest()" classname="guru.springframework.services.RecipeServiceImplTest" time="0.007"/>
+  <testcase name="getRecipeCommandByIdTest()" classname="guru.springframework.services.RecipeServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[2021-07-29 15:50:49.269 DEBUG 19425 --- [    Test worker] g.s.services.RecipeServiceImpl           : I'm in the service
+2021-07-29 15:50:49.270 DEBUG 19425 --- [    Test worker] g.s.services.RecipeServiceImpl           : I'm in the service
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

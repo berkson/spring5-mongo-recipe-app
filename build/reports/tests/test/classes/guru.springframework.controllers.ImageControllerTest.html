@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ImageControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ImageControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/guru.springframework.controllers.html">guru.springframework.controllers</a> &gt; ImageControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">3</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">3.725s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">getImageForm()</td>
+<td class="success">3.526s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">handleImagePost()</td>
+<td class="success">0.086s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">renderImageFromDB()</td>
+<td class="success">0.113s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>15:50:17.805 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+15:50:17.815 [Test worker] INFO org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+15:50:17.865 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+15:50:17.867 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+15:50:17.869 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+15:50:17.877 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+15:50:17.879 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+15:50:17.880 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+15:50:17.881 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+15:50:17.938 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+15:50:18.167 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+15:50:18.182 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+15:50:18.182 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+15:50:18.182 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+15:50:18.183 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+15:50:18.183 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+15:50:18.387 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	g.s.c.ImageController:
+	{POST [/recipe/{id}/image]}: handleImagePost(String,MultipartFile)
+	{GET [/recipe/{id}/recipeimage]}: renderImageFromDB(String,HttpServletResponse)
+	{GET [/recipe/{id}/image]}: showUploadForm(String,Model)
+15:50:18.446 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 3 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+15:50:19.304 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+15:50:19.411 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+15:50:19.463 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+15:50:19.463 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+15:50:19.470 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+15:50:19.470 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+15:50:19.473 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@376aa2f2
+15:50:19.474 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@46adc89e
+15:50:19.474 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+15:50:19.476 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 11 ms
+15:50:19.589 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET &quot;/recipe/1/image&quot;, parameters={}
+15:50:19.601 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.ImageController#showUploadForm(String, Model)
+15:50:19.709 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {recipe=guru.springframework.commands.RecipeCommand@74de682e, org.springframework.validation.BindingResult.recipe=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
+15:50:19.711 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [recipe/imageuploadform]
+15:50:19.711 [Test worker] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [recipe/imageuploadform]
+15:50:19.712 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+15:50:19.779 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+15:50:19.780 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+15:50:19.780 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+15:50:19.780 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+15:50:19.781 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+15:50:19.781 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+15:50:19.782 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+15:50:19.783 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+15:50:19.785 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+15:50:19.786 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+15:50:19.786 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+15:50:19.786 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+15:50:19.786 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+15:50:19.786 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+15:50:19.790 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	g.s.c.ImageController:
+	{POST [/recipe/{id}/image]}: handleImagePost(String,MultipartFile)
+	{GET [/recipe/{id}/recipeimage]}: renderImageFromDB(String,HttpServletResponse)
+	{GET [/recipe/{id}/image]}: showUploadForm(String,Model)
+15:50:19.794 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 3 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+15:50:19.803 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+15:50:19.807 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+15:50:19.808 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+15:50:19.808 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+15:50:19.808 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+15:50:19.808 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+15:50:19.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2684c4fd
+15:50:19.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@6a823064
+15:50:19.809 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+15:50:19.809 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+15:50:19.816 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST &quot;/recipe/1/image&quot;, parameters={}
+15:50:19.817 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.ImageController#handleImagePost(String, MultipartFile)
+15:50:19.829 [Test worker] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {}
+15:50:19.830 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
+15:50:19.841 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+15:50:19.841 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+15:50:19.841 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+15:50:19.852 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+15:50:19.852 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+15:50:19.853 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+15:50:19.860 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+15:50:19.862 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+15:50:19.865 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+15:50:19.866 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+15:50:19.866 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+15:50:19.866 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+15:50:19.867 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+15:50:19.867 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+15:50:19.871 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	g.s.c.ImageController:
+	{POST [/recipe/{id}/image]}: handleImagePost(String,MultipartFile)
+	{GET [/recipe/{id}/recipeimage]}: renderImageFromDB(String,HttpServletResponse)
+	{GET [/recipe/{id}/image]}: showUploadForm(String,Model)
+15:50:19.883 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 3 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+15:50:19.890 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+15:50:19.916 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+15:50:19.916 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+15:50:19.917 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+15:50:19.917 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+15:50:19.917 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+15:50:19.917 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2c132b87
+15:50:19.919 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@8e8c620
+15:50:19.919 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+15:50:19.920 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 3 ms
+15:50:19.921 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET &quot;/recipe/1/recipeimage&quot;, parameters={}
+15:50:19.922 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.ImageController#renderImageFromDB(String, HttpServletResponse)
+15:50:19.932 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.0</a> at 29 de jul de 2021 15:50:52</p>
+</div>
+</div>
+</body>
+</html>

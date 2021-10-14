@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="guru.springframework.controllers.IndexControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:19" hostname="aspire5" time="0.192">
+  <properties/>
+  <testcase name="getIndexPage()" classname="guru.springframework.controllers.IndexControllerTest" time="0.14"/>
+  <testcase name="testMockMVC()" classname="guru.springframework.controllers.IndexControllerTest" time="0.049"/>
+  <system-out><![CDATA[15:50:20.103 [Test worker] DEBUG guru.springframework.controllers.IndexController - Getting Index page
+15:50:20.118 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
+15:50:20.118 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+15:50:20.119 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+15:50:20.121 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+15:50:20.122 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
+15:50:20.124 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+15:50:20.125 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+15:50:20.127 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+15:50:20.131 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+15:50:20.133 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+15:50:20.133 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+15:50:20.134 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+15:50:20.134 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+15:50:20.134 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+15:50:20.139 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
+	g.s.c.IndexController:
+	{ [ || / || /index]}: getIndexPage(Model)
+15:50:20.140 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 1 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
+15:50:20.148 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+15:50:20.152 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+15:50:20.153 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
+15:50:20.153 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
+15:50:20.153 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
+15:50:20.153 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
+15:50:20.154 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@56ea845e
+15:50:20.154 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@bdbc24c
+15:50:20.154 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+15:50:20.154 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
+15:50:20.155 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/", parameters={}
+15:50:20.157 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.IndexController#getIndexPage(Model)
+15:50:20.159 [Test worker] DEBUG guru.springframework.controllers.IndexController - Getting Index page
+15:50:20.160 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {recipes=[]}
+15:50:20.160 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [index]
+15:50:20.160 [Test worker] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [index]
+15:50:20.160 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
