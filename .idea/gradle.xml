@@ -9,7 +9,7 @@
         <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
-            <option value="/mnt/153838B53DB8D7AD/IdeaProjects/spring5-mongo-recipe-app" />
+            <option value="$PROJECT_DIR$" />
           </set>
         </option>
       </GradleProjectSettings>
