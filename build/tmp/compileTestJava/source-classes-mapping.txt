@@ -1,9 +1,9 @@
-guru/springframework/repositories/reactive/CategoryReactiveRepositoryIT.java
- guru.springframework.repositories.reactive.CategoryReactiveRepositoryIT
 guru/springframework/converters/CategoryToCategoryCommandTest.java
  guru.springframework.converters.CategoryToCategoryCommandTest
 guru/springframework/controllers/RecipeControllerTest.java
  guru.springframework.controllers.RecipeControllerTest
+guru/springframework/repositories/reactive/CategoryReactiveRepositoryIT.java
+ guru.springframework.repositories.reactive.CategoryReactiveRepositoryIT
 guru/springframework/controllers/reactive/IndexReactiveControllerTest.java
  guru.springframework.controllers.reactive.IndexReactiveControllerTest
 guru/springframework/converters/NotesToNotesCommandTest.java
@@ -20,10 +20,10 @@ guru/springframework/services/RecipeServiceImplTest.java
  guru.springframework.services.RecipeServiceImplTest
 guru/springframework/converters/RecipeToRecipeCommandTest.java
  guru.springframework.converters.RecipeToRecipeCommandTest
-guru/springframework/repositories/reactive/RecipeReactiveRepositoryIT.java
- guru.springframework.repositories.reactive.RecipeReactiveRepositoryIT
 guru/springframework/controllers/ImageControllerTest.java
  guru.springframework.controllers.ImageControllerTest
+guru/springframework/repositories/reactive/RecipeReactiveRepositoryIT.java
+ guru.springframework.repositories.reactive.RecipeReactiveRepositoryIT
 guru/springframework/converters/CategoryCommandToCategoryTest.java
  guru.springframework.converters.CategoryCommandToCategoryTest
 guru/springframework/Spring5RecipeAppApplicationTests.java
@@ -56,7 +56,7 @@ guru/springframework/services/IngredientServiceImplTest.java
  guru.springframework.services.IngredientServiceImplTest
 guru/springframework/services/reactive/RecipeReactiveServiceImplTest.java
  guru.springframework.services.reactive.RecipeReactiveServiceImplTest
-guru/springframework/controllers/IngredientControllerTest.java
- guru.springframework.controllers.IngredientControllerTest
 guru/springframework/controllers/reactive/ImageReactiveControllerTest.java
  guru.springframework.controllers.reactive.ImageReactiveControllerTest
+guru/springframework/controllers/IngredientControllerTest.java
+ guru.springframework.controllers.IngredientControllerTest

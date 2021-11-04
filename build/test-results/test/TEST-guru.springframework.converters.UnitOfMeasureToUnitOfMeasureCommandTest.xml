@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommandTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:22" hostname="aspire5" time="0.003">
+<testsuite name="guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommandTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-04T01:46:26" hostname="AMCEINF19" time="0.004">
   <properties/>
-  <testcase name="testNullObjectConvert()" classname="guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommandTest" time="0.001"/>
+  <testcase name="testNullObjectConvert()" classname="guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommandTest" time="0.002"/>
   <testcase name="convert()" classname="guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommandTest" time="0.0"/>
   <testcase name="testEmptyObj()" classname="guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommandTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
