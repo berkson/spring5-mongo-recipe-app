@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-04T01:46:25" hostname="AMCEINF19" time="0.177">
+<testsuite name="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-04T02:24:10" hostname="AMCEINF19" time="0.149">
   <properties/>
-  <testcase name="getRecipeByIdTestNotFound()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.155"/>
+  <testcase name="getRecipeByIdTestNotFound()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.139"/>
   <testcase name="testDeleteById()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.001"/>
-  <testcase name="getRecipesTest()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.005"/>
-  <testcase name="getRecipeByIdTest()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.005"/>
-  <testcase name="getRecipeCommandByIdTest()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.007"/>
-  <system-out><![CDATA[2021-11-03 22:46:25.805 DEBUG 43725 --- [    Test worker] g.s.s.r.RecipeReactiveServiceImpl        : I'm in the service
-2021-11-03 22:46:25.806 DEBUG 43725 --- [    Test worker] g.s.s.r.RecipeReactiveServiceImpl        : I'm in the service
+  <testcase name="getRecipesTest()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.002"/>
+  <testcase name="getRecipeByIdTest()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.001"/>
+  <testcase name="getRecipeCommandByIdTest()" classname="guru.springframework.services.reactive.RecipeReactiveServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[2021-11-03 23:24:10.817 DEBUG 45934 --- [    Test worker] g.s.s.r.RecipeReactiveServiceImpl        : I'm in the service
+2021-11-03 23:24:10.818 DEBUG 45934 --- [    Test worker] g.s.s.r.RecipeReactiveServiceImpl        : I'm in the service
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

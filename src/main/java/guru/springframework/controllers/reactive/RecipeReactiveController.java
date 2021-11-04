@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 //import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -33,7 +34,7 @@ public class RecipeReactiveController {
     @GetMapping("/recipe/{id}/show")
     public String showById(@PathVariable String id, Model model){
 
-        model.addAttribute("recipe", recipeService.findById(id).block());
+        model.addAttribute("recipe", recipeService.findById(id));
 
         return "recipe/show";
     }
@@ -47,7 +48,7 @@ public class RecipeReactiveController {
 
     @GetMapping("recipe/{id}/update")
     public String updateRecipe(@PathVariable String id, Model model){
-        RecipeCommand recipeCommand = recipeService.findCommandById(id).block();
+        Mono<RecipeCommand> recipeCommand = recipeService.findCommandById(id);
         model.addAttribute("recipe", recipeCommand);
         return RECIPE_RECIPEFORM_URL;
     }
@@ -64,9 +65,9 @@ public class RecipeReactiveController {
             return RECIPE_RECIPEFORM_URL;
         }
 
-        RecipeCommand savedCommand = recipeService.saveRecipeCommand(command).block();
+        Mono<RecipeCommand> savedCommand = recipeService.saveRecipeCommand(command);
 
-        return "redirect:/recipe/" + savedCommand.getId() + "/show";
+        return "redirect:/recipe/" + savedCommand.map(RecipeCommand::getId).subscribe() + "/show";
     }
 
     @GetMapping("recipe/{id}/delete")

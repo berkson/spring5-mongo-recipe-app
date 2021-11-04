@@ -50,7 +50,7 @@ public class RecipeReactiveServiceImpl implements RecipeReactiveService {
     @Override
     @Transactional
     public Mono<RecipeCommand> findCommandById(String id) {
-        return Mono.just(recipeToRecipeCommand.convert(findById(id).block()));
+        return findById(id).map(recipe -> recipeToRecipeCommand.convert(recipe));
     }
 
     @Override

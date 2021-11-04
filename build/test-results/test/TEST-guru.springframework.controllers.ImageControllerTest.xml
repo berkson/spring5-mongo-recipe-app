@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guru.springframework.controllers.ImageControllerTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2021-11-04T01:46:25" hostname="AMCEINF19" time="0.042">
+<testsuite name="guru.springframework.controllers.ImageControllerTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2021-11-04T02:24:08" hostname="AMCEINF19" time="0.067">
   <properties/>
-  <testcase name="getImageForm()" classname="guru.springframework.controllers.ImageControllerTest" time="0.033">
+  <testcase name="getImageForm()" classname="guru.springframework.controllers.ImageControllerTest" time="0.05">
     <failure message="java.lang.NoClassDefFoundError: javax/servlet/ServletException" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: javax/servlet/ServletException
 	at org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup(MockMvcBuilders.java:76)
 	at guru.springframework.controllers.ImageControllerTest.setUp(ImageControllerTest.java:39)
@@ -106,7 +106,7 @@ Caused by: java.lang.ClassNotFoundException: javax.servlet.ServletException
 	... 96 more
 </failure>
   </testcase>
-  <testcase name="handleImagePost()" classname="guru.springframework.controllers.ImageControllerTest" time="0.002">
+  <testcase name="handleImagePost()" classname="guru.springframework.controllers.ImageControllerTest" time="0.006">
     <failure message="java.lang.NoClassDefFoundError: javax/servlet/ServletException" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: javax/servlet/ServletException
 	at org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup(MockMvcBuilders.java:76)
 	at guru.springframework.controllers.ImageControllerTest.setUp(ImageControllerTest.java:39)
@@ -211,7 +211,7 @@ Caused by: java.lang.ClassNotFoundException: javax.servlet.ServletException
 	... 96 more
 </failure>
   </testcase>
-  <testcase name="renderImageFromDB()" classname="guru.springframework.controllers.ImageControllerTest" time="0.002">
+  <testcase name="renderImageFromDB()" classname="guru.springframework.controllers.ImageControllerTest" time="0.009">
     <failure message="java.lang.NoClassDefFoundError: javax/servlet/ServletException" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: javax/servlet/ServletException
 	at org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup(MockMvcBuilders.java:76)
 	at guru.springframework.controllers.ImageControllerTest.setUp(ImageControllerTest.java:39)
