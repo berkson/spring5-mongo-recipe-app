@@ -85,15 +85,14 @@ public class IngredientReactiveController {
     }
 
     @PostMapping("recipe/{recipeId}/ingredient")
-    public String saveOrUpdate(@ModelAttribute IngredientCommand command) {
+    public Mono<String> saveOrUpdate(@ModelAttribute IngredientCommand command) {
         Mono<IngredientCommand> savedCommand = ingredientService.saveIngredientCommand(command);
 
         savedCommand.doOnNext(result -> log.debug("saved receipe id:" + result.getRecipeId())).subscribe();
         savedCommand.doOnNext(result -> log.debug("saved ingredient id:" + result.getId())).subscribe();
-
-        return "redirect:/recipe/" +
-                savedCommand.map(IngredientCommand::getRecipeId) +
-                "/ingredient/" + savedCommand.map(IngredientCommand::getId) + "/show";
+        return savedCommand.map(ingredientCommand -> "redirect:/recipe/"
+                + ingredientCommand.getRecipeId() +
+                "/ingredient/" + ingredientCommand.getId() + "/show");
     }
 
     @GetMapping("recipe/{recipeId}/ingredient/{id}/delete")

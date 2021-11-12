@@ -41,7 +41,6 @@ public class RecipeReactiveBootstrap implements ApplicationListener<ContextRefre
     }
 
     @Override
-    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         //only bootstraps if the database is empty.
         if (categoryRepository.count().block() == 0) {

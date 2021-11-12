@@ -30,25 +30,43 @@ public class ImageReactiveServiceImpl implements ImageReactiveService {
     @Override
     public void saveImageFile(String recipeId, MultipartFile file) {
 
-        try {
-            Recipe recipe = recipeRepository.findById(recipeId).block();
+        recipeRepository.findById(recipeId).doOnNext(recipe -> {
+            Byte[] byteObjects;
+            try {
+                byteObjects = new Byte[file.getBytes().length];
+                int i = 0;
 
-            Byte[] byteObjects = new Byte[file.getBytes().length];
-
-            int i = 0;
-
-            for (byte b : file.getBytes()){
-                byteObjects[i++] = b;
+                for (byte b : file.getBytes()) {
+                    byteObjects[i++] = b;
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage());
             }
-
             recipe.setImage(byteObjects);
 
-            recipeRepository.save(recipe).block();
-        } catch (IOException e) {
-            //todo handle better
-            log.error("Error occurred", e);
+            recipeRepository.save(recipe);
+        }).doOnError(throwable -> log.error("Error occurred: ", throwable.getMessage()));
 
-            e.printStackTrace();
-        }
+
+//        try {
+//            Recipe recipe = recipeRepository.findById(recipeId).block();
+//
+//            Byte[] byteObjects = new Byte[file.getBytes().length];
+//
+//            int i = 0;
+//
+//            for (byte b : file.getBytes()) {
+//                byteObjects[i++] = b;
+//            }
+//
+//            recipe.setImage(byteObjects);
+//
+//            recipeRepository.save(recipe).block();
+//        } catch (IOException e) {
+//            //todo handle better
+//            log.error("Error occurred", e);
+//
+//            e.printStackTrace();
+//        }
     }
 }
