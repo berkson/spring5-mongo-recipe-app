@@ -10,7 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.exceptions.TemplateInputException;
 import reactor.core.publisher.Mono;
 //import org.springframework.web.servlet.ModelAndView;
 
@@ -26,13 +28,19 @@ public class RecipeReactiveController {
 
     private static final String RECIPE_RECIPEFORM_URL = "recipe/recipeform";
     private final RecipeReactiveService recipeService;
+    private WebDataBinder webDataBinder;
 
     public RecipeReactiveController(RecipeReactiveService recipeService) {
         this.recipeService = recipeService;
     }
 
+    @InitBinder
+    public void initBinder(WebDataBinder webDataBinder) {
+        this.webDataBinder = webDataBinder;
+    }
+
     @GetMapping("/recipe/{id}/show")
-    public String showById(@PathVariable String id, Model model){
+    public String showById(@PathVariable String id, Model model) {
 
         model.addAttribute("recipe", recipeService.findById(id));
 
@@ -40,23 +48,25 @@ public class RecipeReactiveController {
     }
 
     @GetMapping("recipe/new")
-    public String newRecipe(Model model){
+    public String newRecipe(Model model) {
         model.addAttribute("recipe", new RecipeCommand());
 
         return "recipe/recipeform";
     }
 
     @GetMapping("recipe/{id}/update")
-    public String updateRecipe(@PathVariable String id, Model model){
+    public String updateRecipe(@PathVariable String id, Model model) {
         Mono<RecipeCommand> recipeCommand = recipeService.findCommandById(id);
         model.addAttribute("recipe", recipeCommand);
         return RECIPE_RECIPEFORM_URL;
     }
 
     @PostMapping("recipe")
-    public String saveOrUpdate(@Valid @ModelAttribute("recipe") RecipeCommand command, BindingResult bindingResult){
+    public String saveOrUpdate(@ModelAttribute("recipe") RecipeCommand command) {
+        webDataBinder.validate();
+        BindingResult bindingResult = webDataBinder.getBindingResult();
 
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
 
             bindingResult.getAllErrors().forEach(objectError -> {
                 log.debug(objectError.toString());
@@ -71,7 +81,7 @@ public class RecipeReactiveController {
     }
 
     @GetMapping("recipe/{id}/delete")
-    public String deleteById(@PathVariable String id){
+    public String deleteById(@PathVariable String id) {
 
         log.debug("Deleting id: " + id);
 
@@ -79,19 +89,16 @@ public class RecipeReactiveController {
         return "redirect:/";
     }
 
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    @ExceptionHandler(NotFoundException.class)
-//    public ModelAndView handleNotFound(Exception exception){
-//
-//        log.error("Handling not found exception");
-//        log.error(exception.getMessage());
-//
-//        ModelAndView modelAndView = new ModelAndView();
-//
-//        modelAndView.setViewName("404error");
-//        modelAndView.addObject("exception", exception);
-//
-//        return modelAndView;
-//    }
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler({NotFoundException.class, TemplateInputException.class})
+    public String handleNotFound(Exception exception, Model model){
+
+        log.error("Handling not found exception");
+        log.error(exception.getMessage());
+
+        model.addAttribute("exception", exception);
+
+        return "404error";
+    }
 
 }

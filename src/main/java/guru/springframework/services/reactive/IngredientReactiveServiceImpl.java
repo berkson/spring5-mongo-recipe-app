@@ -3,15 +3,14 @@ package guru.springframework.services.reactive;
 import guru.springframework.commands.IngredientCommand;
 import guru.springframework.converters.IngredientCommandToIngredient;
 import guru.springframework.converters.IngredientToIngredientCommand;
+import guru.springframework.converters.UnitOfMeasureToUnitOfMeasureCommand;
 import guru.springframework.domain.Ingredient;
 import guru.springframework.domain.Recipe;
-import guru.springframework.domain.UnitOfMeasure;
 import guru.springframework.repositories.reactive.RecipeReactiveRepository;
 import guru.springframework.repositories.reactive.UnitOfMeasureReactiveRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import reactor.core.publisher.Mono;
 
 import java.util.Optional;
@@ -28,15 +27,18 @@ public class IngredientReactiveServiceImpl implements IngredientReactiveService 
     private final IngredientCommandToIngredient ingredientCommandToIngredient;
     private final RecipeReactiveRepository recipeRepository;
     private final UnitOfMeasureReactiveRepository unitOfMeasureRepository;
+    private final UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand;
 
     public IngredientReactiveServiceImpl(IngredientToIngredientCommand ingredientToIngredientCommand,
                                          IngredientCommandToIngredient ingredientCommandToIngredient,
                                          RecipeReactiveRepository recipeRepository,
-                                         UnitOfMeasureReactiveRepository unitOfMeasureRepository) {
+                                         UnitOfMeasureReactiveRepository unitOfMeasureRepository,
+                                         UnitOfMeasureToUnitOfMeasureCommand unitOfMeasureToUnitOfMeasureCommand) {
         this.ingredientToIngredientCommand = ingredientToIngredientCommand;
         this.ingredientCommandToIngredient = ingredientCommandToIngredient;
         this.recipeRepository = recipeRepository;
         this.unitOfMeasureRepository = unitOfMeasureRepository;
+        this.unitOfMeasureToUnitOfMeasureCommand = unitOfMeasureToUnitOfMeasureCommand;
     }
 
     @Override
@@ -72,14 +74,12 @@ public class IngredientReactiveServiceImpl implements IngredientReactiveService 
                 ingredientFound.setAmount(command.getAmount());
                 unitOfMeasureRepository
                         .findById(command.getUom().getId())
-                        .doOnNext(unitOfMeasure -> ingredientFound.setUom(unitOfMeasure))
-                        .doOnError(throwable -> new RuntimeException("UOM NOT FOUND"));
+                        .subscribe(ingredientFound::setUom);
             } else {
                 //add new Ingredient
                 unitOfMeasureRepository
                         .findById(command.getUom().getId())
-                        .doOnNext(unitOfMeasure -> command.getUom().setDescription(unitOfMeasure.getDescription()))
-                        .doOnError(throwable -> new RuntimeException("Erro ao adicionar novo ingrediente" + throwable.getMessage()));
+                        .subscribe(unitOfMeasure -> command.setUom(unitOfMeasureToUnitOfMeasureCommand.convert(unitOfMeasure)));
                 Ingredient ingredient = ingredientCommandToIngredient.convert(command);
                 ingredient.setRecipe(null); // avoids stackoverflow infinite loop
                 recipe.addIngredient(ingredient);
@@ -89,8 +89,9 @@ public class IngredientReactiveServiceImpl implements IngredientReactiveService 
                     .flatMap(savedRecipe -> {
                         Optional<Ingredient> savedIngredientOptional = savedRecipe.getIngredients()
                                 .stream()
-                                .filter(recipeIngredients -> recipeIngredients.getId().equals(command.getId()))
+                                .filter(recipeIngredient -> recipeIngredient.getId().equals(command.getUom().getId()))
                                 .findFirst();
+
                         if (!savedIngredientOptional.isPresent()) {
                             //not totally safe... But best guess
                             savedIngredientOptional = savedRecipe.getIngredients().stream()
@@ -115,7 +116,7 @@ public class IngredientReactiveServiceImpl implements IngredientReactiveService 
         log.debug("Deleting ingredient: " + recipeId + ":" + idToDelete);
 
         recipeRepository.findById(recipeId)
-                .doOnNext(recipe -> {
+                .subscribe(recipe -> {
                     log.debug("found recipe");
 
                     Optional<Ingredient> ingredientOptional = recipe
@@ -124,15 +125,10 @@ public class IngredientReactiveServiceImpl implements IngredientReactiveService 
                             .filter(ingredient -> ingredient.getId().equals(idToDelete))
                             .findFirst();
 
-                    if (ingredientOptional.isPresent()) {
-                        log.debug("found Ingredient");
-                        Ingredient ingredientToDelete = ingredientOptional.get();
-                        //ingredientToDelete.setRecipe(null);
-                        recipe.getIngredients().remove(ingredientOptional.get());
-                        recipeRepository.save(recipe);
-                    }
-                })
-                .doOnError(throwable -> log.debug("Recipe Id Not found. Id:" + recipeId));
+                    ingredientOptional.ifPresent(ingredient -> recipe.getIngredients().remove(ingredient));
+                    recipeRepository.save(recipe).subscribe();
+
+                });
 
         return Mono.empty();
     }
