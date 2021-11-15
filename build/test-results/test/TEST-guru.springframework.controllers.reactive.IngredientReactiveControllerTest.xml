@@ -1,246 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:21" hostname="aspire5" time="0.526">
+<testsuite name="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2021-11-15T23:22:11" hostname="AMCEINF19" time="0.202">
   <properties/>
-  <testcase name="testNewIngredientForm()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.206"/>
-  <testcase name="testShowIngredient()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.07"/>
-  <testcase name="testListIngredients()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.062"/>
-  <testcase name="testUpdateIngredientForm()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.085"/>
-  <testcase name="testDeleteIngredient()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.044"/>
-  <testcase name="testSaveOrUpdate()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.054"/>
-  <system-out><![CDATA[15:50:21.180 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:50:21.180 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:50:21.180 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:50:21.188 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:50:21.188 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:50:21.189 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:50:21.191 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:50:21.196 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:50:21.201 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-15:50:21.206 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:50:21.206 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:50:21.206 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:50:21.206 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:50:21.207 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:50:21.212 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
-	g.s.c.r.IngredientReactiveController:
-	{GET [/recipe/{recipeId}/ingredient/{id}/delete]}: deleteIngredient(String,String)
-	{GET [/recipe/{recipeId}/ingredient/{id}/show]}: showRecipeIngredient(String,String,Model)
-	{GET [/recipe/{recipeId}/ingredient/new]}: newRecipe(String,Model)
-	{GET [/recipe/{recipeId}/ingredient/{id}/update]}: updateRecipeIngredient(String,String,Model)
-	{POST [/recipe/{recipeId}/ingredient]}: saveOrUpdate(IngredientCommand)
-	{GET [/recipe/{recipeId}/ingredients]}: listIngredients(String,Model)
-15:50:21.214 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-15:50:21.237 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-15:50:21.243 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-15:50:21.243 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-15:50:21.243 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-15:50:21.243 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-15:50:21.243 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-15:50:21.244 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1b2e8f44
-15:50:21.244 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@230744ea
-15:50:21.244 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-15:50:21.244 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-15:50:21.246 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/recipe/1/ingredient/new", parameters={}
-15:50:21.247 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.reactive.IngredientReactiveController#newRecipe(String, Model)
-15:50:21.257 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {ingredient=guru.springframework.commands.IngredientCommand@42ce6573, uomList=[], org.springframework.validation.BindingResult.ingredient=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-15:50:21.258 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [recipe/ingredient/ingredientform]
-15:50:21.258 [Test worker] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [recipe/ingredient/ingredientform]
-15:50:21.267 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
-15:50:21.271 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:50:21.271 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:50:21.271 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:50:21.286 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:50:21.286 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:50:21.287 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:50:21.287 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:50:21.289 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:50:21.290 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-15:50:21.299 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:50:21.299 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:50:21.299 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:50:21.299 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:50:21.299 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:50:21.303 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
-	g.s.c.r.IngredientReactiveController:
-	{GET [/recipe/{recipeId}/ingredient/{id}/delete]}: deleteIngredient(String,String)
-	{GET [/recipe/{recipeId}/ingredient/{id}/show]}: showRecipeIngredient(String,String,Model)
-	{GET [/recipe/{recipeId}/ingredient/new]}: newRecipe(String,Model)
-	{GET [/recipe/{recipeId}/ingredient/{id}/update]}: updateRecipeIngredient(String,String,Model)
-	{POST [/recipe/{recipeId}/ingredient]}: saveOrUpdate(IngredientCommand)
-	{GET [/recipe/{recipeId}/ingredients]}: listIngredients(String,Model)
-15:50:21.309 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-15:50:21.323 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-15:50:21.326 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-15:50:21.326 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-15:50:21.326 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-15:50:21.326 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-15:50:21.326 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-15:50:21.326 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6bb9376b
-15:50:21.327 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@410dcd8d
-15:50:21.327 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-15:50:21.327 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-15:50:21.328 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/recipe/1/ingredient/2/show", parameters={}
-15:50:21.331 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.reactive.IngredientReactiveController#showRecipeIngredient(String, String, Model)
-15:50:21.334 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {ingredient=guru.springframework.commands.IngredientCommand@6e3c162b, org.springframework.validation.BindingResult.ingredient=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-15:50:21.334 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [recipe/ingredient/show]
-15:50:21.334 [Test worker] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [recipe/ingredient/show]
-15:50:21.334 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
-15:50:21.342 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:50:21.342 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:50:21.342 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:50:21.349 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:50:21.349 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:50:21.351 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:50:21.351 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:50:21.360 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:50:21.361 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-15:50:21.362 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:50:21.362 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:50:21.362 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:50:21.363 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:50:21.363 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:50:21.366 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
-	g.s.c.r.IngredientReactiveController:
-	{GET [/recipe/{recipeId}/ingredient/{id}/delete]}: deleteIngredient(String,String)
-	{GET [/recipe/{recipeId}/ingredient/{id}/show]}: showRecipeIngredient(String,String,Model)
-	{GET [/recipe/{recipeId}/ingredient/new]}: newRecipe(String,Model)
-	{GET [/recipe/{recipeId}/ingredient/{id}/update]}: updateRecipeIngredient(String,String,Model)
-	{POST [/recipe/{recipeId}/ingredient]}: saveOrUpdate(IngredientCommand)
-	{GET [/recipe/{recipeId}/ingredients]}: listIngredients(String,Model)
-15:50:21.367 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-15:50:21.380 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-15:50:21.385 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-15:50:21.385 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-15:50:21.385 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-15:50:21.386 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-15:50:21.386 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-15:50:21.386 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@500107c4
-15:50:21.386 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@536503
-15:50:21.386 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-15:50:21.386 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-15:50:21.387 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/recipe/1/ingredients", parameters={}
-15:50:21.388 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.reactive.IngredientReactiveController#listIngredients(String, Model)
-15:50:21.400 [Test worker] DEBUG guru.springframework.controllers.reactive.IngredientReactiveController - Getting ingredient list for recipe id: 1
-15:50:21.400 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {recipe=guru.springframework.commands.RecipeCommand@2d8c4dbd, org.springframework.validation.BindingResult.recipe=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-15:50:21.401 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [recipe/ingredient/list]
-15:50:21.401 [Test worker] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [recipe/ingredient/list]
-15:50:21.401 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
-15:50:21.406 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:50:21.406 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:50:21.406 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:50:21.415 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:50:21.415 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:50:21.416 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:50:21.416 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:50:21.420 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:50:21.421 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-15:50:21.422 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:50:21.422 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:50:21.422 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:50:21.422 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:50:21.423 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:50:21.430 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
-	g.s.c.r.IngredientReactiveController:
-	{GET [/recipe/{recipeId}/ingredient/{id}/delete]}: deleteIngredient(String,String)
-	{GET [/recipe/{recipeId}/ingredient/{id}/show]}: showRecipeIngredient(String,String,Model)
-	{GET [/recipe/{recipeId}/ingredient/new]}: newRecipe(String,Model)
-	{GET [/recipe/{recipeId}/ingredient/{id}/update]}: updateRecipeIngredient(String,String,Model)
-	{POST [/recipe/{recipeId}/ingredient]}: saveOrUpdate(IngredientCommand)
-	{GET [/recipe/{recipeId}/ingredients]}: listIngredients(String,Model)
-15:50:21.431 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-15:50:21.479 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-15:50:21.482 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-15:50:21.482 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-15:50:21.482 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-15:50:21.482 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-15:50:21.482 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-15:50:21.482 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@d24055f
-15:50:21.482 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@323f770c
-15:50:21.482 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-15:50:21.483 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-15:50:21.484 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/recipe/1/ingredient/2/update", parameters={}
-15:50:21.485 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.reactive.IngredientReactiveController#updateRecipeIngredient(String, String, Model)
-15:50:21.488 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - View [InternalResourceView], model {ingredient=guru.springframework.commands.IngredientCommand@12312905, uomList=[], org.springframework.validation.BindingResult.ingredient=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-15:50:21.488 [Test worker] DEBUG org.springframework.web.servlet.view.InternalResourceView - Forwarding to [recipe/ingredient/ingredientform]
-15:50:21.488 [Test worker] DEBUG org.springframework.mock.web.MockRequestDispatcher - MockRequestDispatcher: forwarding to [recipe/ingredient/ingredientform]
-15:50:21.488 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 200 OK
-15:50:21.494 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:50:21.494 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:50:21.494 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:50:21.495 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:50:21.495 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:50:21.495 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:50:21.496 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:50:21.497 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:50:21.498 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-15:50:21.499 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:50:21.499 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:50:21.499 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:50:21.499 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:50:21.500 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:50:21.503 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
-	g.s.c.r.IngredientReactiveController:
-	{GET [/recipe/{recipeId}/ingredient/{id}/delete]}: deleteIngredient(String,String)
-	{GET [/recipe/{recipeId}/ingredient/{id}/show]}: showRecipeIngredient(String,String,Model)
-	{GET [/recipe/{recipeId}/ingredient/new]}: newRecipe(String,Model)
-	{GET [/recipe/{recipeId}/ingredient/{id}/update]}: updateRecipeIngredient(String,String,Model)
-	{POST [/recipe/{recipeId}/ingredient]}: saveOrUpdate(IngredientCommand)
-	{GET [/recipe/{recipeId}/ingredients]}: listIngredients(String,Model)
-15:50:21.504 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-15:50:21.511 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-15:50:21.523 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-15:50:21.524 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-15:50:21.524 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-15:50:21.525 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-15:50:21.525 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-15:50:21.525 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@73cb7d6a
-15:50:21.525 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@2a4715b7
-15:50:21.525 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-15:50:21.525 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 1 ms
-15:50:21.528 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - GET "/recipe/2/ingredient/3/delete", parameters={}
-15:50:21.528 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.reactive.IngredientReactiveController#deleteIngredient(String, String)
-15:50:21.530 [Test worker] DEBUG guru.springframework.controllers.reactive.IngredientReactiveController - deleting ingredient id:3
-15:50:21.531 [Test worker] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {}
-15:50:21.532 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
-15:50:21.536 [Test worker] DEBUG org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator - Loaded expression factory via original TCCL
-15:50:21.536 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-15:50:21.536 [Test worker] DEBUG org.hibernate.validator.internal.engine.AbstractConfigurationImpl - Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-15:50:21.536 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-15:50:21.537 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via TCCL
-15:50:21.537 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ResourceLoaderHelper - Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-15:50:21.538 [Test worker] DEBUG org.hibernate.validator.internal.xml.config.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-15:50:21.539 [Test worker] DEBUG org.hibernate.validator.internal.engine.resolver.TraversableResolvers - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-15:50:21.541 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-15:50:21.542 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-15:50:21.543 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-15:50:21.547 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-15:50:21.548 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-15:50:21.548 [Test worker] DEBUG org.hibernate.validator.internal.engine.ValidatorFactoryConfigurationHelper - HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-15:50:21.552 [Test worker] DEBUG _org.springframework.web.servlet.HandlerMapping.Mappings - 
-	g.s.c.r.IngredientReactiveController:
-	{GET [/recipe/{recipeId}/ingredient/{id}/delete]}: deleteIngredient(String,String)
-	{GET [/recipe/{recipeId}/ingredient/{id}/show]}: showRecipeIngredient(String,String,Model)
-	{GET [/recipe/{recipeId}/ingredient/new]}: newRecipe(String,Model)
-	{GET [/recipe/{recipeId}/ingredient/{id}/update]}: updateRecipeIngredient(String,String,Model)
-	{POST [/recipe/{recipeId}/ingredient]}: saveOrUpdate(IngredientCommand)
-	{GET [/recipe/{recipeId}/ingredients]}: listIngredients(String,Model)
-15:50:21.554 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - 6 mappings in org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping
-15:50:21.561 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-15:50:21.564 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-15:50:21.565 [Test worker] INFO org.springframework.mock.web.MockServletContext - Initializing Spring TestDispatcherServlet ''
-15:50:21.565 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Initializing Servlet ''
-15:50:21.565 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected AcceptHeaderLocaleResolver
-15:50:21.565 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected FixedThemeResolver
-15:50:21.565 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@39489365
-15:50:21.565 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@27d1202b
-15:50:21.565 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-15:50:21.565 [Test worker] INFO org.springframework.test.web.servlet.TestDispatcherServlet - Completed initialization in 0 ms
-15:50:21.567 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - POST "/recipe/2/ingredient", parameters={masked}
-15:50:21.583 [Test worker] DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped to guru.springframework.controllers.reactive.IngredientReactiveController#saveOrUpdate(IngredientCommand)
-15:50:21.585 [Test worker] DEBUG guru.springframework.controllers.reactive.IngredientReactiveController - saved receipe id:2
-15:50:21.585 [Test worker] DEBUG guru.springframework.controllers.reactive.IngredientReactiveController - saved ingredient id:3
-15:50:21.586 [Test worker] DEBUG org.springframework.web.servlet.view.RedirectView - View [RedirectView], model {ingredientCommand=guru.springframework.commands.IngredientCommand@2b9188bd, org.springframework.validation.BindingResult.ingredientCommand=org.springframework.validation.BeanPropertyBindingResult: 0 errors}
-15:50:21.587 [Test worker] DEBUG org.springframework.test.web.servlet.TestDispatcherServlet - Completed 302 FOUND
+  <testcase name="testNewIngredientForm()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.06"/>
+  <testcase name="testShowIngredient()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.037"/>
+  <testcase name="testListIngredients()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.014"/>
+  <testcase name="testUpdateIngredientForm()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.016"/>
+  <testcase name="testDeleteIngredient()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.03"/>
+  <testcase name="testSaveOrUpdate()" classname="guru.springframework.controllers.reactive.IngredientReactiveControllerTest" time="0.041"/>
+  <system-out><![CDATA[2021-11-15 20:22:11.609  INFO 74250 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-11-15 20:22:11.609  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-11-15 20:22:11.609  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-11-15 20:22:11.646  INFO 74250 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-11-15 20:22:11.646  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-11-15 20:22:11.646  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-11-15 20:22:11.660  INFO 74250 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-11-15 20:22:11.660  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-11-15 20:22:11.660  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-11-15 20:22:11.663 DEBUG 74250 --- [    Test worker] g.s.c.r.IngredientReactiveController     : Getting ingredient list for recipe id: 1
+2021-11-15 20:22:11.676  INFO 74250 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-11-15 20:22:11.677  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-11-15 20:22:11.677  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-11-15 20:22:11.703  INFO 74250 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-11-15 20:22:11.705  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-11-15 20:22:11.707  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-11-15 20:22:11.711 DEBUG 74250 --- [    Test worker] g.s.c.r.IngredientReactiveController     : deleting ingredient id:3
+2021-11-15 20:22:11.736  INFO 74250 --- [    Test worker] o.s.mock.web.MockServletContext          : Initializing Spring TestDispatcherServlet ''
+2021-11-15 20:22:11.737  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-11-15 20:22:11.737  INFO 74250 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-11-15 20:22:11.743 DEBUG 74250 --- [    Test worker] g.s.c.r.IngredientReactiveController     : saved receipe id:2
+2021-11-15 20:22:11.745 DEBUG 74250 --- [    Test worker] g.s.c.r.IngredientReactiveController     : saved ingredient id:3
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

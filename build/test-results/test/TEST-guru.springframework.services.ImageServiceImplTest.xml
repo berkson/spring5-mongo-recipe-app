@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guru.springframework.services.ImageServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:48" hostname="aspire5" time="0.085">
+<testsuite name="guru.springframework.services.ImageServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-15T23:22:12" hostname="AMCEINF19" time="0.037">
   <properties/>
-  <testcase name="saveImageFile()" classname="guru.springframework.services.ImageServiceImplTest" time="0.085"/>
+  <testcase name="saveImageFile()" classname="guru.springframework.services.ImageServiceImplTest" time="0.037"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

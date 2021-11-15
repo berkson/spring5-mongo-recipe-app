@@ -1,0 +1,45 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+/bin/
+/nb-configuration.xml
+/src/main/resources/tk.properties
+/src/main/resources/token.json
+/src/main/resources/dbsac.properties
+/src/main/resources/dbsacpro.properties
+/src/main/resources/dbscc.properties
+/src/main/resources/dbsccpro.properties
+/src/main/resources/sendemail.properties
+/src/main/resources/service-account-file.json
+
+### Plugin de versionamento do Maven
+/pom.xml.releaseBackup
+/release.properties

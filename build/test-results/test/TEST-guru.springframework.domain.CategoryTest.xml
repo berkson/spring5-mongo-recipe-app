@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="guru.springframework.domain.CategoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-07-29T18:50:22" hostname="aspire5" time="0.004">
+<testsuite name="guru.springframework.domain.CategoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-11-15T23:22:08" hostname="AMCEINF19" time="0.016">
   <properties/>
-  <testcase name="getId()" classname="guru.springframework.domain.CategoryTest" time="0.001"/>
-  <testcase name="getDescription()" classname="guru.springframework.domain.CategoryTest" time="0.001"/>
+  <testcase name="getId()" classname="guru.springframework.domain.CategoryTest" time="0.007"/>
+  <testcase name="getDescription()" classname="guru.springframework.domain.CategoryTest" time="0.003"/>
   <testcase name="getRecipes()" classname="guru.springframework.domain.CategoryTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
