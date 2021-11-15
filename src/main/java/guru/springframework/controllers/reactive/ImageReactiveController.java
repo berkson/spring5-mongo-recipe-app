@@ -7,6 +7,7 @@ import guru.springframework.services.reactive.ImageReactiveService;
 import guru.springframework.services.reactive.RecipeReactiveService;
 //import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import reactor.core.publisher.Mono;
 
 //import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
@@ -42,13 +44,15 @@ public class ImageReactiveController {
         return "recipe/imageuploadform";
     }
 
-    @PostMapping("recipe/{id}/image")
-    public String handleImagePost(@PathVariable String id, @RequestParam("imagefile") MultipartFile file){
 
-        imageService.saveImageFile(id, file);
-
-        return "redirect:/recipe/" + id + "/show";
-    }
+//    // TODO: Pendente a funcionalidade em webflux
+//    @PostMapping("recipe/{id}/image")
+//    public String handleImagePost(@PathVariable String id, @RequestParam("imagetoUpload") Mono<FilePart> file){
+//
+//        imageService.saveImageFile(id, file);
+//
+//        return "redirect:/recipe/" + id + "/show";
+//    }
 
 //    @GetMapping("recipe/{id}/recipeimage")
 //    public void renderImageFromDB(@PathVariable String id, HttpServletResponse response) throws IOException {

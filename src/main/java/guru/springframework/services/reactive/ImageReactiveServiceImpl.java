@@ -1,15 +1,16 @@
 package guru.springframework.services.reactive;
 
-import guru.springframework.domain.Recipe;
-import guru.springframework.repositories.RecipeRepository;
 import guru.springframework.repositories.reactive.RecipeReactiveRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
+import org.springframework.http.codec.multipart.FilePart;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
+import reactor.core.publisher.Mono;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 /**
  * Created by jt on 7/3/17.
@@ -26,6 +27,8 @@ public class ImageReactiveServiceImpl implements ImageReactiveService {
 
         this.recipeRepository = recipeService;
     }
+
+
 
     @Override
     public void saveImageFile(String recipeId, MultipartFile file) {
@@ -45,7 +48,7 @@ public class ImageReactiveServiceImpl implements ImageReactiveService {
             recipe.setImage(byteObjects);
 
             recipeRepository.save(recipe);
-        }).doOnError(throwable -> log.error("Error occurred: ", throwable.getMessage()));
+        }).then().doOnError(throwable -> log.error("Error occurred: ", throwable.getMessage()));
 
 
 //        try {
@@ -68,5 +71,27 @@ public class ImageReactiveServiceImpl implements ImageReactiveService {
 //
 //            e.printStackTrace();
 //        }
+    }
+
+    //TODO: pendente no webflux
+    @Override
+    public void saveImageFile(String recipeId, Mono<FilePart> file) {
+
+        recipeRepository.findById(recipeId).doOnNext(recipe -> {
+            Byte[] byteObjects = new Byte[0];
+            File file1 = null;
+            file.doOnNext(filePart -> filePart.transferTo(file1)).then();
+            try {
+                int i = 0;
+                for(byte b : Files.readAllBytes(file1.toPath())){
+                    byteObjects[i++] = b;
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage());
+            }
+            recipe.setImage(byteObjects);
+
+            recipeRepository.save(recipe);
+        }).then().doOnError(throwable -> log.error("Error occurred: ", throwable.getMessage()));
     }
 }
