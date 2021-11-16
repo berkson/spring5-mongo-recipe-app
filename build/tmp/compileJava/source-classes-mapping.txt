@@ -104,9 +104,11 @@ guru/springframework/controllers/IngredientController.java
  guru.springframework.controllers.IngredientController
 guru/springframework/converters/UnitOfMeasureCommandToUnitOfMeasure.java
  guru.springframework.converters.UnitOfMeasureCommandToUnitOfMeasure
-guru/springframework/controllers/reactive/ImageReactiveController.java
- guru.springframework.controllers.reactive.ImageReactiveController
-guru/springframework/services/reactive/ImageReactiveServiceImpl.java
- guru.springframework.services.reactive.ImageReactiveServiceImpl
 guru/springframework/services/reactive/ImageReactiveService.java
  guru.springframework.services.reactive.ImageReactiveService
+guru/springframework/controllers/reactive/ImageReactiveController.java
+ guru.springframework.controllers.reactive.ImageReactiveController
+guru/springframework/config/WebReactiveConfig.java
+ guru.springframework.config.WebReactiveConfig
+guru/springframework/services/reactive/ImageReactiveServiceImpl.java
+ guru.springframework.services.reactive.ImageReactiveServiceImpl

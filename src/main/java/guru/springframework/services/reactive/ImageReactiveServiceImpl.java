@@ -16,7 +16,6 @@ import java.nio.file.Files;
  * Created by jt on 7/3/17.
  */
 @Slf4j
-@Service
 @Profile("reactive")
 public class ImageReactiveServiceImpl implements ImageReactiveService {
 
